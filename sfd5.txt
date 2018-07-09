@@ -1,0 +1,19 @@
+package de1;
+import java.io.*;
+import java.util.*;
+public class De1 {
+
+    public static void main(String[] args)throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        String a,b;    
+        System.out.println("Enter your email:");
+        a=br.readLine();
+        String []h=a.split("@");
+        System.out.println("First element:"+h[0]);
+        if("gmail.com".equals(h[1]))
+            System.out.println("Second element:adamas.com");
+        else
+            System.out.println("First element:"+h[1]);
+    }
+}
