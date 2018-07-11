@@ -9,7 +9,7 @@ public class JavaApplication57 {
     
     public static void main(String[] args)throws IOException
     {
-        String nline=System.getProperty("line.separator")
+        String nline=System.getProperty("line.separator");
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter a Text or Sentence:");
         String hop=br.readLine();
