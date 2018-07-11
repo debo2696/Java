@@ -1,0 +1,35 @@
+package javaapplication57;
+
+import java.io.IOException;
+import java.io.*;
+import java.util.*;
+
+public class JavaApplication57 {
+
+    
+    public static void main(String[] args)throws IOException
+    {
+        File fl=new File("E:\\debo2696\\big.txt");
+        String nline=System.getProperty("line.separator");
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter a Text or Sentence:");
+        String hop=br.readLine();
+        FileWriter fw=new FileWriter(fl,true);
+        fw.append(hop);
+        fw.append(nline);
+        fw.close();      
+        
+        System.out.println("\nTextFile:");
+        FileReader fr=new FileReader(fl);
+        br=new BufferedReader(fr);
+        StringBuffer sw=new StringBuffer();
+        String line;
+        
+        while((line=br.readLine())!=null) {
+            sw.append(line);
+            sw.append("\n"); }
+        fr.close();
+        System.out.println(sw.toString());
+    }        
+}
+
