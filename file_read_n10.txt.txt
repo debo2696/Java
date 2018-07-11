@@ -1,0 +1,23 @@
+package javaapplication57;
+
+import java.io.IOException;
+import java.io.*;
+import java.util.*;
+
+public class JavaApplication57 {
+
+    
+    public static void main(String[] args)throws IOException
+    {
+        FileReader fr=new FileReader("E:\\debo2696\\big.txt");
+        BufferedReader br=new BufferedReader(fr);
+        StringBuffer sw=new StringBuffer();
+        String line;
+        while((line=br.readLine())!=null) {
+            sw.append(line);
+            sw.append("\n"); }
+        fr.close();
+        System.out.println(sw.toString());
+    }        
+}
+
