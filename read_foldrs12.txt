@@ -9,6 +9,7 @@ public class Folder_lst {
         File folder=new File("E:\\Others\\vp");
         String []file=folder.list();
         System.out.println("Folder location: "+folder.getAbsolutePath()+"\n");
+        System.out.println("Folder location: "+folder.toString()+"\n");
         for(String fl:file){
             System.out.println(fl);
         }
