@@ -1,23 +1,29 @@
-package javaapplication57;
-
-import java.io.IOException;
+package javaapplication4;
 import java.io.*;
 import java.util.*;
 
-public class JavaApplication57 {
+public class JavaApplication4 {
 
-    
-    public static void main(String[] args)throws IOException
-    {
-        FileReader fr=new FileReader("E:\\debo2696\\big.txt");
+  
+    public static void main(String[] args)throws IOException {
+        File f=new File("E:\\Android\\hllo.txt");
+        //File folder=new File("E:\\Android");
+        FileWriter fw=new FileWriter(f,true);
+        FileReader fr=new FileReader(f);
         BufferedReader br=new BufferedReader(fr);
-        StringBuffer sw=new StringBuffer();
-        String line;
-        while((line=br.readLine())!=null) {
-            sw.append(line);
-            sw.append("\n"); }
+        StringBuffer sb=new StringBuffer();
+        String ln;
+        while((ln=br.readLine())!=null){
+            sb.append(ln);
+            sb.append("\n");
+        }
         fr.close();
-        System.out.println(sw.toString());
-    }        
+        System.out.println(f.toString());
+        System.out.println(fr.toString());
+        System.out.println(br.toString());
+        System.out.println(fw.toString()+"\n");
+        System.out.println(sb.toString());
+    }
+        
 }
-
+    
