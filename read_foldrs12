@@ -1,0 +1,16 @@
+package folder_lst;
+import java.io.*;
+import java.util.*;
+
+public class Folder_lst {
+
+   
+    public static void main(String[] args) {
+        File folder=new File("E:\\Android");
+        String []file=folder.list();
+        for(String fl:file){
+            System.out.println(fl);
+        }
+    }
+    
+}
