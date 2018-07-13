@@ -7,12 +7,14 @@ public class Folder_lst {
    
     public static void main(String[] args)throws IOException {
         File folder=new File("E:\\Others\\vp");
-        String []file=folder.list();
+        String flfo[]=folder.list();
         System.out.println("Folder location: "+folder.getAbsolutePath()+"\n");
         System.out.println("Folder location: "+folder.toString()+"\n");
-        for(String fl:file){
+        for(String fl:flfo){
             System.out.println(fl);
         }
+        System.out.println(folder.list());
+        System.out.println(flfo[2]);
     }
     
 }
