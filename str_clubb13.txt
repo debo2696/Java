@@ -1,0 +1,47 @@
+
+package javaapplication9;
+import java.io.*;
+import java.util.*;
+
+public class JavaApplication9 {
+
+    
+    public static void main(String[] args)throws IOException {
+        File f=new File("D:\\new.txt");
+        FileReader fr=new FileReader(f);
+        StringBuffer sb=new StringBuffer();
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); 
+        String ln;
+        br=new BufferedReader(fr);
+        while((ln=br.readLine())!=null)
+        {
+            sb.append(ln);
+            sb.append(" ");
+        }
+        fr.close();
+        String pop=sb.toString();
+        String []pp=pop.split(" ");
+        ArrayList alist=new ArrayList();
+        for(String wrd:pp){
+            alist.add(wrd);
+        }
+        int ap=0,or=0,mn=0;
+        for(int i=0;i<alist.size();i++)
+        {
+            if(alist.get(i).equals("apple")){
+                ap++;
+            }
+            else if(alist.get(i).equals("mango")){
+                mn++;
+            }
+            else if(alist.get(i).equals("orange")){
+                or++;
+            }
+        }            
+        //System.out.println(sb.toString());
+        System.out.println("Apple:"+ap);
+        System.out.println("Mango:"+mn);
+        System.out.println("Orange:"+or);
+    }
+    
+}
