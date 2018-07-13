@@ -1,0 +1,137 @@
+package javaapplication11;
+import java.io.*;
+import java.util.*;
+/**
+ *
+ * @author Siddhan
+ */
+public class JavaApplication11 {
+
+    public static void main(String[] args) {
+        fname f=new fname();
+        f.read();
+                
+   } 
+    
+}
+
+class fname
+{
+    String arr[];
+    public String fnamesearch()
+    {
+        String filename="";
+        
+        StringBuilder sb=new StringBuilder();
+     File directory = new File("D:\\sidd\\");
+        //get all the files from a directory
+        File[] fList = directory.listFiles();
+        for (File file : fList){
+            if (file.isFile()){
+                sb.append(file.getName());
+                sb.append("\n");
+            }
+            
+        }
+        String h=sb.toString();
+        return h;
+    }
+    
+    
+    
+    
+   
+    
+    public void read()
+    {
+        
+        String g="";
+        g=fnamesearch();
+        System.out.println("File Found!!!!!!");
+        System.out.println(g);
+        
+       String arr[]=g.split("\n");
+       // System.out.println(arr[3]);
+        
+        
+        
+        int i=arr.length;
+        int j;
+        String seq="";
+        for(j=0;j<i;j++)
+        {
+        
+        String jk="D:\\sidd\\"+arr[j];
+        try {
+			File file = new File(jk);
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				stringBuffer.append(line);
+				stringBuffer.append(" ");
+			}
+			fileReader.close();
+			//System.out.println("Contents of file:");
+                      seq=seq+stringBuffer.toString();
+                      System.out.println(stringBuffer.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+        
+        //System.out.println("Enter a word to search : ");
+        Scanner sc=new Scanner(System.in);
+        //String inp=sc.nextLine();
+        String q[]=seq.split(" ");
+        int count=0;
+        int gd=0,bd=0,tot=0,good=0,bad=0;
+        int arr_cnt=q.length;
+        //for(int w=0;w<arr_cnt;w++)
+        //{
+            //if(q[w].equals(inp))
+            {
+            //System.out.println(q[w]);
+            //    count=count+1;
+          //  }
+            
+        //}
+        //System.out.println(inp+" : "+count); 
+        for(int w=0;w<arr_cnt;w++)
+        {
+            if(q[w].equals("good")){
+                gd++;
+            }
+            else if(q[w].equals("nice")){
+                gd++;
+            }
+            else if(q[w].equals("Excellent")){
+                gd++;
+            }
+            else if(q[w].equals("Awesome")){
+                gd++;
+            }
+            else if(q[w].equals("Worthless")){
+                bd++;
+            }
+            else if(q[w].equals("bad")){
+                bd++;
+            }
+            else if(q[w].equals("Nonsense")){
+                bd++;
+            }
+        }
+        tot=gd+bd;
+        good=(gd*100)/50;
+        bad=(bd*100)/50;
+        
+        System.out.println("Good:"+good+"%");
+        System.out.println("Bad:"+bad+"%");
+    }    
+        
+        
+        
+        
+    }    
+}
