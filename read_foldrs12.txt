@@ -5,9 +5,10 @@ import java.util.*;
 public class Folder_lst {
 
    
-    public static void main(String[] args) {
-        File folder=new File("E:\\Android");
+    public static void main(String[] args)throws IOException {
+        File folder=new File("E:\\Others\\vp");
         String []file=folder.list();
+        System.out.println("Folder location: "+folder.getAbsolutePath()+"\n");
         for(String fl:file){
             System.out.println(fl);
         }
