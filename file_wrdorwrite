@@ -1,0 +1,37 @@
+package javaapplication6;
+import java.io.*;
+import java.util.*;
+
+public class JavaApplication6 {
+
+  
+    public static void main(String[] args)throws IOException {
+        System.out.println("Press 1 to READ or 2 to Write:");
+        Scanner sc=new Scanner(System.in);
+        int val=sc.nextInt();
+        File f=new File("E:\\Android\\hllo.txt");
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        if(val==1){
+            FileReader fr=new FileReader(f);
+            StringBuffer sb=new StringBuffer();
+            String ln;
+            br=new BufferedReader(fr);
+            while((ln=br.readLine())!=null){
+                sb.append(ln);
+                sb.append("\n");
+            }
+            fr.close();
+            System.out.println(sb.toString());
+        }
+        else if(val==2){
+            FileWriter fw=new FileWriter(f,true);
+            System.out.println("Enter the text:");
+            String tx=br.readLine();
+            String t="\n"+tx;
+            fw.append(t);
+            fw.close();
+        }
+            
+    }
+    
+}
