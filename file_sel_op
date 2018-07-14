@@ -1,0 +1,40 @@
+package javaapplication5;
+import java.util.*;
+import java.io.*;
+
+public class JavaApplication5 {
+
+   
+    public static void main(String[] args)throws IOException {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        //System.out.println("Enter the path:");
+        //String foldr=br.readLine();
+        File folder=new File("E:\\Android\\");
+        String pth[]=folder.list();
+        int count=0;
+        for(String fl:pth){
+            count++;
+            System.out.println(count+">:"+fl);
+        }
+        System.out.println("\nSelect the desired file:");
+        int val=br.read();
+        val=val-48;
+        //System.out.println(val-1);
+        //System.out.println(folder.toString()+"\\"+pth[val-1]);
+        //System.out.println(foldr.toString()+"\\"+pth[val-1]);
+        //System.out.println(folder);
+        System.out.println("Location: "+folder.toString()+"\\"+pth[val-1]);
+        String fo=folder.toString()+"\\"+pth[val-1];
+        FileReader fr=new FileReader(fo);
+        StringBuffer sb=new StringBuffer();
+        br=new BufferedReader(fr);
+        String ln;
+        while((ln=br.readLine())!=null){
+            sb.append(ln);
+            sb.append("\n");
+        }
+        fr.close();
+        System.out.println(sb.toString());
+    }
+    
+}
