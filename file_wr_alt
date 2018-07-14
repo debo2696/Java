@@ -1,0 +1,19 @@
+package javaapplication6;
+import java.io.*;
+import java.util.*;
+
+public class JavaApplication6 {
+
+  
+    public static void main(String[] args)throws IOException {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        File f=new File("E:\\Android\\hllo.txt");
+        FileWriter fw=new FileWriter(f,true);
+        System.out.println("Enter a text:");
+        String ln=br.readLine();
+        String l="\n"+ln;
+        fw.append(l);
+        fw.close();
+    }
+    
+}
