@@ -1,0 +1,35 @@
+package javaapplication7;
+import java.util.*;
+import java.io.*;
+
+public class JavaApplication7 {
+
+    
+    public static void main(String[] args)throws IOException {
+        File f=new File("E:\\Android\\hllo1.txt");
+        FileReader fr=new FileReader(f);
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        StringBuffer sb=new StringBuffer();
+        String ln;
+        br=new BufferedReader(fr);
+        while((ln=br.readLine())!=null){
+            sb.append(ln);
+            sb.append("");
+        }
+        fr.close();
+        System.out.println(sb.toString());
+        String s=sb.toString();
+        String arr[]=s.split("@");
+        int i=0;
+        //System.out.println(arr[i].length());
+        for(i=0;i<arr[i].length();i++)
+        {
+            System.out.println(arr[i]);
+        }
+        /*System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
+        System.out.println(arr[3]);*/
+    }
+    
+}
