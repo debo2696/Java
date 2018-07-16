@@ -1,0 +1,31 @@
+
+package javaapplication14;
+import java.util.*;
+import java.io.*;
+
+public class JavaApplication14 {
+
+   
+    public static void main(String[] args)throws IOException {
+        File f=new File("D:\\ss\\ss3.txt");
+        FileReader fr=new FileReader(f);
+        BufferedReader br=new BufferedReader(fr);
+        StringBuffer sb=new StringBuffer();
+        String ln,fs="";
+        int count=0;
+        while((ln=br.readLine())!=null){
+                sb.append(ln);
+                count++;  
+                sb.append("\n");                
+        }
+        fr.close();
+        fs=sb.toString();
+        String k[]=fs.split("\n");
+        int p;
+        System.out.println("Enter line number:");
+        br=new BufferedReader(new InputStreamReader(System.in));
+        p=Integer.parseInt(br.readLine());
+        System.out.println(k[p-1]);
+    }
+    
+}
