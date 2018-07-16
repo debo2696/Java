@@ -24,7 +24,8 @@ public class JavaApplication14 {
         char s;
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter line number:");
-        s=sc.next().charAt(0);
+        s=sc.next().charAt(count-3);
+        //s=sc.next().charAt(0); {this line doesnt require counter to run}
         p=s;
         int pop=p-65;
         System.out.println(k[pop]);
