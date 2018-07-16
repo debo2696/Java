@@ -1,31 +1,31 @@
 
-package javaapplication14;
+package javaapplication8;
 import java.util.*;
 import java.io.*;
 
-public class JavaApplication14 {
+public class JavaApplication8 {
 
-   
+  
     public static void main(String[] args)throws IOException {
-        File f=new File("D:\\ss\\ss3.txt");
+        File f=new File("E:\\Android\\em_n.txt");
         FileReader fr=new FileReader(f);
-        BufferedReader br=new BufferedReader(fr);
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));    
+        br=new BufferedReader(fr);
         StringBuffer sb=new StringBuffer();
-        String ln,fs="";
-        int count=0;
+        String ln;
+        int count=0,val;
         while((ln=br.readLine())!=null){
-                sb.append(ln);
-                count++;  
-                sb.append("\n");                
+            sb.append(ln);
+            count++;
+            sb.append("\n");
         }
         fr.close();
-        fs=sb.toString();
-        String k[]=fs.split("\n");
-        int p;
-        System.out.println("Enter line number:");
+        String line=sb.toString();
+        String a[]=line.split("\n");
+        System.out.println("Enter the SL.no:");
         br=new BufferedReader(new InputStreamReader(System.in));
-        p=Integer.parseInt(br.readLine());
-        System.out.println(k[p-1]);
+        val=Integer.parseInt(br.readLine());
+        System.out.println(a[val-1]);
     }
     
 }
