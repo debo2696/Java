@@ -1,0 +1,117 @@
+package javaapplication1;
+import java.io.*;
+import java.util.Scanner;
+/**
+ *
+ * @author tcs
+ */
+public class JavaApplication1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)throws IOException {
+        
+        
+        StringBuffer sbfinal=null;
+        String data=null,data1="";
+        File f1=new File("D:\\config.txt");
+        FileReader fr1=new FileReader(f1);
+        BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));    
+        br1=new BufferedReader(fr1);
+        StringBuffer sb1=new StringBuffer();
+        
+        String ln1;
+        String flpth=null;
+        while((ln1=br1.readLine())!=null){
+            sb1.append(ln1);
+            sb1.append("\n");
+        }
+        String path=sb1.toString();
+        String fpathfinal=null;
+        String patharr[]=path.split("\n");
+       int pathint,pathlen=0;
+       pathlen=patharr.length;
+        for(pathint=0;pathint<pathlen;pathint++)
+        {
+            flpth=patharr[pathint];
+            File f=new File("\\\\"+flpth+"\\data\\");
+            
+             File[] fList = f.listFiles();
+        for (File file : fList){
+            if (file.isFile()){
+                fpathfinal=file.getAbsolutePath();
+                //System.out.println(file.getAbsoluteFile());
+                
+                File ffinal=new File(fpathfinal);
+        FileReader fr=new FileReader(ffinal);
+        BufferedReader brfinal=new BufferedReader(new InputStreamReader(System.in));    
+        brfinal=new BufferedReader(fr);
+        sbfinal=new StringBuffer();
+        String ln;
+       
+        while((ln=brfinal.readLine())!=null){
+            sbfinal.append(ln);
+            sbfinal.append("\n");
+            
+        }
+        
+            data1=data1+sbfinal.toString();
+                
+            }
+        }
+        
+        data=data1;
+           
+        
+        }
+        
+        System.out.println(data); 
+        
+        
+        
+        /*
+        File f=new File(fpathfinal);
+        FileReader fr=new FileReader(f);
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));    
+        br=new BufferedReader(fr);
+        StringBuffer sb=new StringBuffer();
+        String ln;
+        int count=0,val;
+        while((ln=br.readLine())!=null){
+            sb.append(ln);
+            count++;
+            sb.append("\n");
+        }
+        fr.close();*/
+        String line=data.toString();
+        String a[]=line.split("\n");
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a item to search : ");
+        String hop=sc.nextLine();
+        int arrlen=a.length;
+        int i=0,lno=0;
+        for(i=0;i<arrlen;i++)
+        {
+            String pline=a[i].toString();
+            String []spb=pline.split("\\|");
+            int spblen=spb.length;
+            for(int j=0;j<spblen;j++)
+            {
+                if(spb[j].equalsIgnoreCase(hop))
+                {
+                    lno=i;
+                    System.out.println(a[lno]);
+                }
+                else
+                {
+                     
+                }
+                
+            }
+            
+        }
+     }
+    
+}
