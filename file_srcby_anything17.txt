@@ -1,0 +1,44 @@
+package javaapplication11;
+import java.util.*;
+import java.io.*;
+
+public class JavaApplication11 {
+
+    
+    public static void main(String[] args)throws IOException {
+        File f=new File("E:\\Android\\em_n.txt");
+        FileReader fr=new FileReader(f);
+        StringBuffer sb=new StringBuffer();
+        BufferedReader br=new BufferedReader(fr);
+        BufferedReader sr=new BufferedReader(new InputStreamReader(System.in));
+        String ln;
+        while((ln=br.readLine())!=null){
+            sb.append(ln);
+            sb.append("\n");
+        }
+        fr.close();
+        String l=sb.toString();
+        String line[]=l.split("\n");
+        String wrd;
+        int lno,wcount=0;
+        System.out.println("Enter the word:");
+        wrd=sr.readLine();
+        for(int i=0;i<line.length;i++){
+            String linee=line[i];
+            String brknwrd[]=linee.split("\\|");
+            
+            for(int j=0;j<brknwrd.length;j++){
+                if(brknwrd[j].equalsIgnoreCase(wrd)){
+                lno=i;    
+                System.out.println(line[lno]);
+                wcount++;
+                }
+               
+            }
+        }
+        if(wcount==0){
+                System.out.println("Invalid keyword!");
+         }
+    }
+                
+}
