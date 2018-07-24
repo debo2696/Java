@@ -1,0 +1,24 @@
+package javaapplication9;
+import java.util.*;
+import java.io.*;
+
+public class JavaApplication9 {
+
+    public static void main(String[] args)throws IOException {
+        File folder=new File("E:\\Android");
+        //FileReader fr=new FileReader(folder);
+        String list[]=folder.list();
+        for(int i=0;i<list.length;i++){
+            File f=new File(folder+"\\"+list[i]);
+            if((f.isDirectory())==true){
+                String fol[]=f.list();
+                for(int j=0;j<fol.length;j++){
+                System.out.println("fol"+fol[j]);
+                }
+            }
+            else
+                System.out.println(folder+"\\"+list[i]);
+        }
+    }
+}
+   
