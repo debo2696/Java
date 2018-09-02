@@ -1,0 +1,22 @@
+package javaapplication14;
+import java.util.*;
+import java.io.*;
+public class JavaApplication14 {
+
+    public static void main(String[] args)throws IOException {
+        File f=new File("E:\\Others\\v");
+        BufferedReader brs=new BufferedReader(new InputStreamReader(System.in));
+        String flfo[]=f.list(),flnm="null";
+        int flen=flfo.length;
+        for(String fls:flfo){
+            flnm=fls;
+            FileWriter fw=new FileWriter("E:\\Others\\a.txt",true);
+            fw.append(flnm);
+            fw.append("\n");
+            fw.close();
+        }       
+    }
+    
+}
+
+//Problem with this code is it will write same file/folder next time even if it already exists in the file
