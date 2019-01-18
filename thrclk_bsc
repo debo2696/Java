@@ -1,0 +1,35 @@
+import java.util.*;
+import java.lang.*;
+public class Thr2 extends Thread {
+
+    public static void main(String[] args) {
+        thr t1=new thr();
+        //tmin t2=new tmin();
+        //tsec t3=new tsec();
+        //System.out.println();
+        t1.start();
+        //t2.start();
+        //t3.start();
+    }
+    
+}
+
+public class thr extends Thread{
+    public void run(){
+        int h,m,s;
+        for(h=0;h<=24;h++){
+            for(m=0;m<=60;m++){
+                for(s=0;s<=60;s++){
+                    try{
+                        System.out.println(h+":"+m+":"+s);
+                        sleep(1000);
+                    }
+                    catch(Exception h1){
+                        System.out.println(h1.toString());                                                                                                                                                                                                                                                                                                                                                         
+                    }
+                
+                }
+            }
+        }
+    }
+}
