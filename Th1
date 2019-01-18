@@ -6,7 +6,7 @@ public class Thh1 extends Thread {
     public static void main(String[] args) {
             mth1 m1=new mth1();
             mth2 m2=new mth2();
-            System.out.print("Threads:"+m1.getPriority()+m2.getPriority()+"\n");
+            System.out.print("Thread1pr:"+m1.getPriority()+" Thread2pr:"+m2.getPriority()+"\n");
             m1.start();
             m2.start();
     }
