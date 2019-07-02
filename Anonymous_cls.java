@@ -9,6 +9,9 @@ interface B
 {
     public abstract void hello();
 }
+interface C{
+    public abstract void lam();
+}
 class Seeker
 {
     public static void main(String[] args) {
@@ -24,9 +27,13 @@ class Seeker
             public void hello()
             {
                 System.out.println("Overloading the interface");
-            }
+            }    
         };
+        
+        C int2=() -> System.out.println("Overloading interface using Lambda expression");
+        
         obj1.see();
         int1.hello();
+        int2.lam();
     }
 }
