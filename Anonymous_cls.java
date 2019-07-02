@@ -5,6 +5,10 @@ class A
         System.out.println("Class A sees");
     }
 }
+interface B
+{
+    public abstract void hello();
+}
 class Seeker
 {
     public static void main(String[] args) {
@@ -15,6 +19,14 @@ class Seeker
                     System.out.println("I'm an anonymous class");
                 }
         };
+        B int1=new B()//Normally we can't create an object/instance of interface but with anonymous class we can
+        {
+            public void hello()
+            {
+                System.out.println("Overloading the interface");
+            }
+        };
         obj1.see();
+        int1.hello();
     }
 }
